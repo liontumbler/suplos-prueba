@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edwin Velasquez Jimenez</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="color-fondo">
+    <div class="text-white m-2">
+        <h4>Procesos / Eventos</h4>
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-4 d-grid justify-content-center">
+                    <div class="row text-center border border-white rounded p-3">
+                        <div class="col-12">
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="text-decoration-none text-white cp">
+                                <i class="bi bi-pencil-fill"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            Crear
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 d-grid justify-content-center">
+                    <div class="row text-center border border-white rounded p-3">
+                        <div class="col-12">
+                            <i class="bi bi-copy text-white cp"></i>
+                        </div>
+                        <div class="col-12">
+                            Copiar
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 d-grid justify-content-center">
+                    <div class="row text-center border border-white rounded p-3">
+                        <div class="col-12">
+                            <a data-bs-toggle="modal" data-bs-target="#consultarModal" id="consultar"
+                                class="text-decoration-none text-white cp">
+                                <i class="bi bi-search text-white cp"></i>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            Consultar
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Modal crear -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Oferta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cerrarModalCrear"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="ofertaForm">
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="objeto" class="form-label">objeto</label>
+                                <input type="text" class="form-control" id="objeto" placeholder="Objeto" required>
+                            </div>
+
+                            <div class="mb-3 col-6">
+                                <label for="actividad" class="form-label">actividad</label>
+                                <select id="actividad" class="form-control" disabled>
+                                    <option value="Actividad 1">Actividad 1</option>
+                                    <option value="Actividad 2">Actividad 2</option>
+                                    <option value="Actividad 3">Actividad 3</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-6 ">
+                                <label for="descripcion" class="form-label">descripcion</label>
+                                <textarea type="text" class="form-control" id="descripcion"
+                                    placeholder="Descripción"></textarea>
+                            </div>
+                            <div class="col-6"></div>
+                            <div class="mb-3 col-6">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="moneda" class="form-label">moneda</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="bi bi-list-ul"></i></span>
+                                            <select id="moneda" class="form-control">
+                                                <option value="COP">COP</option>
+                                                <option value="USD">USD</option>
+                                                <option value="EUR">EUR</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="presupuesto" class="form-label">presupuesto</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" id="presupuesto"
+                                                placeholder="Presupuesto" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer col-12">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal consultar -->
+    <div class="modal fade" id="consultarModal" tabindex="-1" aria-labelledby="consultarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="consultarModalLabel">consultar oferta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="cerrarModalConsultar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="consultarModal">
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="id" class="form-label">id</label>
+                                <input type="text" class="form-control" id="id" placeholder="id">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="objeto" class="form-label">objeto</label>
+                                <input type="text" class="form-control" id="objeto" placeholder="Objeto">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="comprador" class="form-label">comprador</label>
+                                <input type="text" class="form-control" id="comprador" placeholder="comprador">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="estado" class="form-label">estado</label>
+                                <select id="estado" class="form-control">
+                                    <option value="ACTIVO">ACTIVO</option>
+                                    <option value="PUBLICADO">PUBLICADO</option>
+                                    <option value="EVALUACIÓN">EVALUACIÓN</option>
+                                </select>
+                            </div>
+                            <div class="modal-footer col-12">
+                                <button type="submit" class="btn btn-primary">buscar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <button class="btn btn-primary" id="reporte">Reporte</button>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">ronda</th>
+                                <th scope="col">objetivo</th>
+                                <th scope="col">descripcion</th>
+                                <th scope="col">fecha inicio</th>
+                                <th scope="col">fecha cierre</th>
+                                <th scope="col">estado</th>
+                                <th scope="col">responsable de evento</th>
+                                <th scope="col">acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="crud.js"></script>
+</body>
+
+</html>
